@@ -1,0 +1,84 @@
+# ===============================
+# Java / Spring Boot
+# ===============================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# ===============================
+# Maven
+# ===============================
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+!**/src/main/**
+!**/src/test/**
+
+# ===============================
+# Gradle
+# ===============================
+.gradle/
+build/
+
+# ===============================
+# IDE - IntelliJ IDEA
+# ===============================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ===============================
+# IDE - Eclipse
+# ===============================
+.project
+.classpath
+.settings/
+bin/
+
+# ===============================
+# IDE - VS Code
+# ===============================
+.vscode/
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+
+# ===============================
+# Environment files
+# ===============================
+.env
+
+# ===============================
+# Application properties (optional)
+# ===============================
+# Uncomment if you store secrets here
+# src/main/resources/application.properties
+# src/main/resources/application.yml
+
+# ===============================
+# Node (if frontend included)
+# ===============================
+node_modules/
+dist/
+
+# ===============================
+# Misc
+# ===============================
+*.swp
+
+
+
+.metadata/
