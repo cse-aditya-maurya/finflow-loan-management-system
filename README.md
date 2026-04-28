@@ -151,7 +151,7 @@ JPA and Hibernate are used for ORM and database interaction.
 
 **Frontend**
 
-* Angular
+* React
 
 **Database**
 
