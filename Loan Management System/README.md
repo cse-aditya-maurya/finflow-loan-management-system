@@ -264,7 +264,7 @@ Login → Apply Loan → Upload Docs → Submit → Admin Review → Decision �
 
 ## 🧑‍💼 Author
 
-**Shivraj Jaiswal**
+**Aditya Maurya**
 Software Engineer | Java Developer
 
 ---
