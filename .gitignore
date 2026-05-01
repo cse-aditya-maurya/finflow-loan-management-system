@@ -1,4 +1,5 @@
 # ===============================
+<<<<<<< HEAD
 
 # 🚀 FinFlow Microservices .gitignore
 
@@ -43,10 +44,61 @@ logs/
 
 # ===============================
 
+=======
+# Java / Spring Boot
+# ===============================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# ===============================
+# Maven
+# ===============================
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+!**/src/main/**
+!**/src/test/**
+
+# ===============================
+# Gradle
+# ===============================
+.gradle/
+build/
+
+# ===============================
+# IDE - IntelliJ IDEA
+# ===============================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ===============================
+# IDE - Eclipse
+# ===============================
+.project
+.classpath
+.settings/
+bin/
+
+# ===============================
+# IDE - VS Code
+# ===============================
+.vscode/
+
+# ===============================
+# OS Files
+# ===============================
+>>>>>>> 4315a1a0f1ac9c04f57a88a9ff393c13a8c8abac
 .DS_Store
 Thumbs.db
 
 # ===============================
+<<<<<<< HEAD
 
 # 🔴 Environment & Secrets
 
@@ -113,3 +165,36 @@ yarn.lock
 *.pem
 *.crt
 /.metadata/
+=======
+# Logs
+# ===============================
+logs/
+*.log
+
+# ===============================
+# Environment files
+# ===============================
+.env
+
+# ===============================
+# Application properties (optional)
+# ===============================
+# Uncomment if you store secrets here
+# src/main/resources/application.properties
+# src/main/resources/application.yml
+
+# ===============================
+# Node (if frontend included)
+# ===============================
+node_modules/
+dist/
+
+# ===============================
+# Misc
+# ===============================
+*.swp
+
+
+
+.metadata/
+>>>>>>> 4315a1a0f1ac9c04f57a88a9ff393c13a8c8abac
