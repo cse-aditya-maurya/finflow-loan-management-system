@@ -1,0 +1,322 @@
+/* ─────────────────────────────────────────────────────────────
+   GLOBAL THEME TOKENS  (scoped to body so all pages benefit)
+───────────────────────────────────────────────────────────── */
+body[data-theme="dark"],
+body:not([data-theme]) {
+  --bg:      #0d1017;
+  --surface: #131720;
+  --border:  #1f2333;
+  --border2: #141826;
+  --text1:   #e8ecf4;
+  --text2:   #5a6180;
+  --text3:   #394060;
+  --text4:   #c2c8dc;
+
+  --ic-indigo-bg: #1e1f3a; --ic-indigo:  #818cf8;
+  --ic-blue-bg:   #152030; --ic-blue:    #60a5fa;
+  --ic-green-bg:  #0f2218; --ic-green:   #4ade80;
+  --ic-amber-bg:  #211b0e; --ic-amber:   #fbbf24;
+  --ic-red-bg:    #20100f; --ic-red:     #f87171;
+  --ic-purple-bg: #1c1229; --ic-purple:  #c084fc;
+
+  --act-green-bg: #0f2218; --act-green: #4ade80;
+  --act-red-bg:   #20100f; --act-red:   #f87171;
+  --act-amber-bg: #211b0e; --act-amber: #fbbf24;
+  --act-grey-bg:  #161b28; --act-grey:  #6b7590;
+
+  --hdr-icon-bg: #1a1d28; --hdr-icon-border: #252836; --hdr-icon-color: #6366f1;
+  --err-bg: #1f1215; --err-border: #3d1a1a; --err-color: #f87171;
+  --spin-track: #1a1d28; --spin-head: #6366f1;
+  --count-bg: #1a1e2d; --count-color: #4e546a;
+}
+
+body[data-theme="light"] {
+  --bg:      #f2f4f8;
+  --surface: #ffffff;
+  --border:  #e2e7f0;
+  --border2: #eaeef6;
+  --text1:   #111827;
+  --text2:   #6b7280;
+  --text3:   #9ca3af;
+  --text4:   #374151;
+
+  --ic-indigo-bg: #ede9fe; --ic-indigo:  #6366f1;
+  --ic-blue-bg:   #dbeafe; --ic-blue:    #2563eb;
+  --ic-green-bg:  #dcfce7; --ic-green:   #16a34a;
+  --ic-amber-bg:  #fef9c3; --ic-amber:   #d97706;
+  --ic-red-bg:    #fee2e2; --ic-red:     #dc2626;
+  --ic-purple-bg: #f3e8ff; --ic-purple:  #9333ea;
+
+  --act-green-bg: #dcfce7; --act-green: #16a34a;
+  --act-red-bg:   #fee2e2; --act-red:   #dc2626;
+  --act-amber-bg: #fef9c3; --act-amber: #d97706;
+  --act-grey-bg:  #f3f4f6; --act-grey:  #6b7280;
+
+  --hdr-icon-bg: #ede9fe; --hdr-icon-border: #ddd6fe; --hdr-icon-color: #6366f1;
+  --err-bg: #fef2f2; --err-border: #fecaca; --err-color: #dc2626;
+  --spin-track: #e5e7eb; --spin-head: #6366f1;
+  --count-bg: #f3f4f6; --count-color: #9ca3af;
+}
+
+/* Smooth theme transition on everything */
+*, *::before, *::after {
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   PAGE
+───────────────────────────────────────────────────────────── */
+.rp-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-top: 86px;
+  padding-bottom: 3rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.rp-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEADER
+───────────────────────────────────────────────────────────── */
+.rp-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.rp-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.rp-header-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--hdr-icon-bg);
+  border: 1px solid var(--hdr-icon-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hdr-icon-color);
+  flex-shrink: 0;
+}
+
+.rp-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text1);
+  margin: 0;
+}
+
+.rp-sub {
+  font-size: 0.78rem;
+  color: var(--text2);
+  margin: 3px 0 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ERROR
+───────────────────────────────────────────────────────────── */
+.rp-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--err-bg);
+  border: 1px solid var(--err-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--err-color);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LOADING
+───────────────────────────────────────────────────────────── */
+.rp-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 6rem 0;
+  color: var(--text2);
+  font-size: 0.85rem;
+}
+
+.rp-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--spin-track);
+  border-top-color: var(--spin-head);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+/* @keyframes spin is defined globally in index.css */
+
+/* ─────────────────────────────────────────────────────────────
+   KPI GRID
+───────────────────────────────────────────────────────────── */
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   KPI CARD
+───────────────────────────────────────────────────────────── */
+.rp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.3rem 1.4rem;
+}
+
+.rp-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+}
+
+.ic-indigo { background: var(--ic-indigo-bg); color: var(--ic-indigo); }
+.ic-blue   { background: var(--ic-blue-bg);   color: var(--ic-blue);   }
+.ic-green  { background: var(--ic-green-bg);  color: var(--ic-green);  }
+.ic-amber  { background: var(--ic-amber-bg);  color: var(--ic-amber);  }
+.ic-red    { background: var(--ic-red-bg);    color: var(--ic-red);    }
+.ic-purple { background: var(--ic-purple-bg); color: var(--ic-purple); }
+
+.rp-card-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text1);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.28rem;
+}
+
+.rp-card-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.22rem;
+}
+
+.rp-card-sub {
+  font-size: 0.73rem;
+  color: var(--text3);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ACTIVITY PANEL
+───────────────────────────────────────────────────────────── */
+.rp-activity {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.rp-activity-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.4rem;
+  border-bottom: 1px solid var(--border2);
+  color: var(--text2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.rp-count {
+  margin-left: auto;
+  background: var(--count-bg);
+  color: var(--count-color);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.rp-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.rp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1.4rem;
+  border-bottom: 1px solid var(--border2);
+}
+
+.rp-row:last-child { border-bottom: none; }
+
+.rp-badge {
+  flex-shrink: 0;
+  font-size: 0.63rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  min-width: 62px;
+  text-align: center;
+}
+
+.act-green { background: var(--act-green-bg); color: var(--act-green); }
+.act-red   { background: var(--act-red-bg);   color: var(--act-red);   }
+.act-amber { background: var(--act-amber-bg); color: var(--act-amber); }
+.act-grey  { background: var(--act-grey-bg);  color: var(--act-grey);  }
+
+.rp-row-text {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--text4);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rp-row-sub {
+  color: var(--text3);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.rp-row-time {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--text3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .rp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .rp-grid { grid-template-columns: 1fr; }
+  .rp-card-value { font-size: 1.65rem; }
+}

@@ -1,0 +1,84 @@
+/* Input Group Container */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Input Label */
+.input-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.required-star {
+  color: #ef4444;
+  margin-left: 0.25rem;
+}
+
+/* Input Field */
+.input-field {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background-color: rgba(15, 23, 42, 0.6);
+  color: #e2e8f0;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+.input-field:disabled {
+  background-color: rgba(15, 23, 42, 0.4);
+  color: #64748b;
+  cursor: not-allowed;
+  border-color: #1e293b;
+}
+
+/* Input with Error */
+.input-error {
+  border-color: #ef4444;
+}
+
+.input-error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Placeholder styling */
+.input-field::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+.input-field:focus::placeholder {
+  color: #475569;
+}
+
+/* Error Message */
+.error-message {
+  font-size: 0.875rem;
+  color: #ef4444;
+  margin-top: -0.25rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .input-field {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .input-label {
+    font-size: 0.9rem;
+  }
+}

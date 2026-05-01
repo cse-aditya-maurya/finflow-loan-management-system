@@ -1,0 +1,87 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        # 🔐 AUTH SERVICE
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+
+        #  APPLICATION SERVICE
+        - id: application-service
+          uri: lb://APPLICATION-SERVICE
+          predicates:
+            - Path=/applications/**
+
+        #  DOCUMENT SERVICE
+        - id: document-service
+          uri: lb://DOCUMENT-SERVICE
+          predicates:
+            - Path=/documents/**
+
+        #  ADMIN SERVICE
+        - id: admin-service
+          uri: lb://ADMIN-SERVICE
+          predicates:
+            - Path=/admin/**
+
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+#  SWAGGER AGGREGATION
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    primary-name: auth-service
+    display-operation-id: false
+    operations-sorter: alpha
+    urls:
+      - name: auth-service
+        url: /auth/v3/api-docs
+      - name: application-service
+        url: /applications/v3/api-docs
+      - name: document-service
+        url: /documents/v3/api-docs
+      - name: admin-service
+        url: /admin/v3/api-docs
+
+#  Monitoring
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  endpoints:
+    web:
+      exposure:
+        include: gateway,health,info,metrics
+
+# 🌍 EUREKA
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# 🔐 JWT
+jwt:
+  secret: finflow_super_secure_jwt_secret_key_2026_project_backend
+  expiration: 86400000
